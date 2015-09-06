@@ -46,6 +46,9 @@ www/index.html – the root HTML of the application. Generally this is containin
 Most styling should be possible to do with just the css and img folders. The HTML files use Angular so you will see "directives" (HTML attributes) that do things like repeat the blocks, insert data from the controllers, etc.
 
  # FOR YOUTUBE LIBS
+ 
+ https://github.com/brandly/angular-youtube-embed/blob/master/src/demo/the.html
+ 
  # Angular YouTube Embed
 
 > Embed a YouTube player with a simple directive.
