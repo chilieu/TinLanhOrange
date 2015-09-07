@@ -6,4 +6,16 @@
   text-align: justify;
 }
 
+img{padding: 5px 15px;}
+
 p {word-wrap:break-word;}
+
+.video-title{
+  max-width:200px; /* Customise it accordingly */
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+
+.by, .mydate{font-size: 0.9em;}

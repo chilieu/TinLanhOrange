@@ -45,7 +45,6 @@ controler.controller('PlaylistsCtrl', function($scope, Request) {
 
   Request.post("test.php", {action: 'playlists', channelId: 'UCd8tHv1A1VsTL7WS9yQ3eGg'}).then(function (response) {
     $scope.playlists = angular.fromJson(response);
-    console.log(response);
   });
 
 });
@@ -54,15 +53,11 @@ controler.controller('PlaylistCtrl', function($scope, $stateParams, Request) {
 
   Request.post("test.php", {action: 'playlistDetail', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
     $scope.playlistDetail = angular.fromJson(response);;
-    console.log($scope.playlistDetail);
   });
 
   Request.post("test.php", {action: 'playlistVideos', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
     $scope.playlistVideos = angular.fromJson(response);
-    console.log($scope.playlistVideos);
   });
-
-  console.log($scope);
 
 });
 
@@ -71,7 +66,15 @@ controler.controller('VideoCtrl', function($scope, $stateParams, Request) {
   $scope.videoId   = $stateParams.videoId;
   Request.post("test.php", {action: 'video', videoId: $stateParams.videoId}).then(function (response) {
     $scope.videos = angular.fromJson(response);
-    console.log(response);
+  });
+
+});
+
+controler.controller('VideoChannelCtrl', function($scope, $stateParams, Request) {
+
+  Request.post("test.php", {action: 'videos', channelId: 'UCd8tHv1A1VsTL7WS9yQ3eGg'}).then(function (response) {
+    $scope.videos = angular.fromJson(response);
+    console.log($scope.videos);
   });
 
 });

@@ -81,9 +81,20 @@ app.run(function($ionicPlatform) {
         controller: 'VideoCtrl'
       }
     }
+  })
+
+  .state('app.videos', {
+    url: '/videos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/videos.html',
+        controller: 'VideoChannelCtrl'
+      }
+    }
   });
 
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/videos');
 
 });
