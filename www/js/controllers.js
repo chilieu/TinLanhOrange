@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+var controler = angular.module('starter.controllers', ['RequestService']);
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+controler.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -39,18 +39,41 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+
+controler.controller('PlaylistsCtrl', function($scope, Request) {
+
+  Request.post("test.php", {action: 'playlists', channelId: 'UCd8tHv1A1VsTL7WS9yQ3eGg'}).then(function (response) {
+    $scope.playlists = angular.fromJson(response);
+    console.log(response);
+  });
+
+});
+
+controler.controller('PlaylistCtrl', function($scope, $stateParams, Request) {
+
+  Request.post("test.php", {action: 'playlistDetail', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
+    $scope.playlistDetail = angular.fromJson(response);;
+    console.log($scope.playlistDetail);
+  });
+
+  Request.post("test.php", {action: 'playlistVideos', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
+    $scope.playlistVideos = angular.fromJson(response);
+    console.log($scope.playlistVideos);
+  });
+
+  console.log($scope);
+
+});
+
+controler.controller('VideoCtrl', function($scope, $stateParams, Request) {
+
+  $scope.videoId   = $stateParams.videoId;
+  Request.post("test.php", {action: 'video', videoId: $stateParams.videoId}).then(function (response) {
+    $scope.videos = angular.fromJson(response);
+    console.log(response);
+  });
+
+});
+
+

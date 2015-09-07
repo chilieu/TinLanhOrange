@@ -1,8 +1,18 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="{{playlists[0].snippet.channelTitle}}">
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
+
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+		        <img class="img-responsive" src="{{playlist.snippet.thumbnails.default.url}}">
+            		<p>
+            			<strong>{{playlist.snippet.title}}</strong>
+		            <br><mydate>{{playlist.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate>
+		            <br><small>By: {{playlist.snippet.channelTitle}}</small></p>
+		    </div>
+		</div>
+
       </ion-item>
     </ion-list>
   </ion-content>
