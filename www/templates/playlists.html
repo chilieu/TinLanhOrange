@@ -5,12 +5,11 @@
 
 		<div class="row">
 			<div class="col-sm-12 col-md-12">
-		        <img class="img-responsive" src="{{playlist.snippet.thumbnails.default.url}}">
-            		<p>
-            			<strong>{{playlist.snippet.title}}</strong>
-		            <br><mydate>{{playlist.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate>
-		            <br><small>By: {{playlist.snippet.channelTitle}}</small></p>
-		    </div>
+            <img class="img-responsive pull-left" src="{{playlist.snippet.thumbnails.default.url}}">
+        		<strong class="video-title" style="">{{ playlist.snippet.title | limitTo: 75 }}{{playlist.snippet.title.length > 75 ? '...' : ''}}</strong>
+            <span class="by">By: {{playlist.snippet.channelTitle}}</span>
+            <mydate class="mydate">{{playlist.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate>
+	    </div>
 		</div>
 
       </ion-item>

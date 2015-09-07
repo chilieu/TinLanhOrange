@@ -1,13 +1,14 @@
-<ion-view view-title="{{playlistDetail.snippet.channelTitle}}">
+<ion-view view-title="{{playlistDetail.snippet.title}}">
   <ion-content>
-    <h1>{{playlistDetail.snippet.title}}</h1>
 
     <ion-list>
       <ion-item ng-repeat="video in playlistVideos" href="#/app/video/{{video.contentDetails.videoId}}">
       <div class="row">
         <div class="col-sm-12 col-md-12">
-              <h4>{{video.snippet.title}}</h4>
-              <img class="img-responsive" src="{{video.snippet.thumbnails.medium.url}}">
+              <img class="img-responsive pull-left" src="{{video.snippet.thumbnails.default.url}}">
+              <strong class="video-title" style="">{{ video.snippet.title | limitTo: 75 }}{{video.snippet.title.length > 75 ? '...' : ''}}</strong>
+              <span class="by">By: {{video.snippet.channelTitle}}</span>
+              <mydate class="mydate">{{video.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate>
           </div>
       </div>
 
