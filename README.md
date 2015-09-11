@@ -1,7 +1,15 @@
 # TinLanhOrange
 This is Tin Lanh Orange Video App - TinLanh Orange Channel on Youtube
 
-# Setup For MacOS
+# Setup For MacOS and Linxux
+Install Java and SDK:
+
+sudo apt-get update
+
+sudo apt-get install default-jdk
+
+download android sdk
+
 Install node:
 
 https://nodejs.org/dist/v0.12.7/node-v0.12.7.pkg
