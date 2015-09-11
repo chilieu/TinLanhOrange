@@ -32,6 +32,34 @@ ionic serve
 
 And you will get the app opened in a browser window (recommend Chrome). As you make changes to the style sheet, it should automatically update in the browser.
 
+# Build notes:
+
+cordova platform remove android
+
+cordova platform add android
+
+cordova plugin rm org.apache.cordova.console
+
+
+cordova build --release android
+
+cordova compile android
+
+
+
+export ANDROID_HOME=~/home/vagrant/android-sdk-linux/
+export PATH=$PATH:/home/vagrant/android-sdk-linux/tools/
+
+
+sudo chmod 0777 /home/vagrant/apps/TinLanhOrange/platforms/android/gradlew
+
+sudo chmod 0777 /home/vagrant/apps/TinLanhOrange/platforms/android/settings.gradle
+
+sudo dpkg --add-architecture i386
+sudo apt-get -qqy update
+sudo apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
+
+
 # Code Layout
 The file structure is as follows:
 
