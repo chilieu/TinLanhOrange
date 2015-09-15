@@ -1,18 +1,16 @@
 <ion-view view-title="Tin Lành Orange Channel">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="video in videos" href="#/app/video/{{video.id.videoId}}">
 
-  		<div class="row">
-  			<div class="col-sm-12 col-md-12">
-              <img class="img-responsive pull-left" src="{{video.snippet.thumbnails.default.url}}">
-              <strong class="video-title" style="">{{ video.snippet.title | limitTo: 75 }}{{video.snippet.title.length > 75 ? '...' : ''}}</strong>
-              <span class="by">by: Tin Lành Orange</span>
-              <mydate class="mydate">{{video.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate>
+      <div class="row" ng-repeat="video in videos">
+        <div class="col-sm-12 col-md-12">
+        <a class="item" href="#/app/video/{{video.id.videoId}}">
+          <img ng-if="video.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src="{{video.snippet.thumbnails.default.url}}">
+          <h2>{{ video.snippet.title | limitTo: 75 }}{{video.snippet.title.length > 75 ? '...' : ''}}</h2>
+          <p><span class="by">By: Tin Lành Orange</span>
+              <mydate class="mydate">{{video.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate></p>
+        </a>
         </div>
-  		</div>
+      </div>
 
-      </ion-item>
-    </ion-list>
   </ion-content>
 </ion-view>
