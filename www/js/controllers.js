@@ -1,4 +1,4 @@
-var controler = angular.module('starter.controllers', ['RequestService']);
+var controler = angular.module('TinLanhOrange.controllers', ['RequestService','TinLanhOrange.config']);
 
 controler.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,9 +41,9 @@ controler.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   };
 });
 
-controler.controller('PlaylistsCtrl', function($scope, Request) {
+controler.controller('PlaylistsCtrl', function($scope, Request, GENERAL_CONFIG) {
 
-  Request.post("test.php", {action: 'playlists', channelId: 'UCd8tHv1A1VsTL7WS9yQ3eGg'}).then(function (response) {
+  Request.post("", {action: 'playlists', channelId: GENERAL_CONFIG.CHANNELID}).then(function (response) {
     $scope.playlists = angular.fromJson(response);
   });
 
@@ -51,11 +51,11 @@ controler.controller('PlaylistsCtrl', function($scope, Request) {
 
 controler.controller('PlaylistCtrl', function($scope, $stateParams, Request) {
 
-  Request.post("test.php", {action: 'playlistDetail', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
+  Request.post("", {action: 'playlistDetail', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
     $scope.playlistDetail = angular.fromJson(response);;
   });
 
-  Request.post("test.php", {action: 'playlistVideos', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
+  Request.post("", {action: 'playlistVideos', channelPlaylistId: $stateParams.playlistId}).then(function (response) {
     $scope.playlistVideos = angular.fromJson(response);
   });
 
@@ -64,15 +64,15 @@ controler.controller('PlaylistCtrl', function($scope, $stateParams, Request) {
 controler.controller('VideoCtrl', function($scope, $stateParams, Request) {
 
   $scope.videoId   = $stateParams.videoId;
-  Request.post("test.php", {action: 'video', videoId: $stateParams.videoId}).then(function (response) {
+  Request.post("", {action: 'video', videoId: $stateParams.videoId}).then(function (response) {
     $scope.videos = angular.fromJson(response);
   });
 
 });
 
-controler.controller('VideoChannelCtrl', function($scope, $stateParams, Request) {
+controler.controller('VideoChannelCtrl', function($scope, $stateParams, Request, GENERAL_CONFIG) {
 
-  Request.post("test.php", {action: 'videos', channelId: 'UCd8tHv1A1VsTL7WS9yQ3eGg'}).then(function (response) {
+  Request.post("", {action: 'videos', channelId: GENERAL_CONFIG.CHANNELID}).then(function (response) {
     $scope.videos = angular.fromJson(response);
     console.log($scope.videos);
   });

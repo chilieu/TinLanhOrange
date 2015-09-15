@@ -1,15 +1,9 @@
-var CalculatorService = angular.module('CalculatorService', [])
-.service('Calculator', function () {
-    this.square = function (a) { return a*a};
+    var api = angular.module('RequestService', ['TinLanhOrange.config']).service('Request',requestService);
 
-});
-
-    var api = angular.module('RequestService', []).service('Request',requestService);
-
-    requestService.$inject = ['$http','$q', '$ionicLoading'];
-    function requestService($http,$q, $ionicLoading)
+    requestService.$inject = ['$http','$q', '$ionicLoading', 'GENERAL_CONFIG'];
+    function requestService($http,$q, $ionicLoading, GENERAL_CONFIG)
     {
-        var base_url = "http://web-s7.com/";
+        var base_url = GENERAL_CONFIG.API_URL;
 
         return {
             get: function (url) {
