@@ -12,7 +12,7 @@
 
       <div class="row-fluid" ng-repeat="playlist in playlists">
 
-        <a class="item item-icon-left item-icon-right" href="#/app/playlists/{{playlist.id}}">
+        <a class="item item-icon-right" href="#/app/playlists/{{playlist.id}}">
           <img ng-if="playlist.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src='{{playlist.snippet.thumbnails.default.url}}'>
           <h2>{{ playlist.snippet.title | limitTo: 75 }}{{playlist.snippet.title.length > 75 ? '...' : ''}}</h2>
           <p class="pull-left"><span class="by">By: {{playlist.snippet.channelTitle}}</span>

@@ -7,7 +7,7 @@
   <ion-content>
 
       <div class="row-fluid" ng-repeat="video in playlistVideos">
-        <a class="item item-icon-left item-icon-right" href="#/app/video/{{video.contentDetails.videoId}}">
+        <a class="item item-icon-right" href="#/app/video/{{video.contentDetails.videoId}}">
           <img ng-if="video.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src="{{video.snippet.thumbnails.default.url}}">
           <h2>{{ video.snippet.title | limitTo: 75 }}{{video.snippet.title.length > 75 ? '...' : ''}}</h2>
           <p class="pull-left"><span class="by">By: {{video.snippet.channelTitle}}</span>

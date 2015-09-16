@@ -27,7 +27,7 @@
     </div>
 
       <div class="row-fluid" ng-repeat="video in videos">
-        <a class="item item-icon-left item-icon-right" href="#/app/video/{{video.id.videoId}}">
+        <a class="item" href="#/app/video/{{video.id.videoId}}">
           <img ng-if="video.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src="{{video.snippet.thumbnails.default.url}}">
           <h2>{{video.snippet.title | limitTo: 75}}{{video.snippet.title.length > 75 ? '...' : ''}}</h2>
           <p class="pull-left"><span class="by">By: Tin Lành Orange</span>
