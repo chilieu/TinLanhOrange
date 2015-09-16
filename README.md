@@ -53,6 +53,7 @@ cordova compile android
 
 
 export ANDROID_HOME=~/home/vagrant/android-sdk-linux/
+
 export PATH=$PATH:/home/vagrant/android-sdk-linux/tools/
 
 
