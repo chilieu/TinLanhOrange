@@ -17,5 +17,9 @@ p {word-wrap:break-word;}
   text-overflow: ellipsis;
   font-size: 0.9em;
 }
-
 .by, .mydate{font-size: 0.9em;}
+.bar-header {
+   height: 50px; /*just an example*/
+}
+.bar-header .title {}
+.has-header {}

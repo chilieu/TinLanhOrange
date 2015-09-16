@@ -4666,7 +4666,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   .item h2 {
     margin: 0 0 2px 0;
     font-size: 16px;
-    font-weight: normal; }
+    font-weight: bold; }
   .item h3 {
     margin: 0 0 4px 0;
     font-size: 14px; }
@@ -4773,8 +4773,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 .item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
+  text-overflow: ellipsis;}
 
 a.item {
   color: inherit;

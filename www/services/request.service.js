@@ -4,7 +4,9 @@
     function requestService($http,$q, $ionicLoading, GENERAL_CONFIG)
     {
         var base_url = GENERAL_CONFIG.API_URL;
-
+        $ionicLoading.show({
+          template: 'Loading...'
+        });
         return {
             get: function (url) {
                 var deferred = $q.defer();
@@ -13,6 +15,7 @@
                     url: base_url + url
                 }).success(function (data) {
                     deferred.resolve(data);
+                    $ionicLoading.hide();
                 }).error(function (err) {
                     deferred.reject(err);
                 });

@@ -1,15 +1,25 @@
 <ion-view view-title="{{playlists[0].snippet.channelTitle}}">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
   <ion-content>
 
-      <div class="row" ng-repeat="playlist in playlists">
-        <div class="col-sm-12 col-md-12">
-        <a class="item" href="#/app/playlists/{{playlist.id}}">
+      <div class="row-fluid" ng-repeat="playlist in playlists">
+
+        <a class="item item-icon-left item-icon-right" href="#/app/playlists/{{playlist.id}}">
           <img ng-if="playlist.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src='{{playlist.snippet.thumbnails.default.url}}'>
           <h2>{{ playlist.snippet.title | limitTo: 75 }}{{playlist.snippet.title.length > 75 ? '...' : ''}}</h2>
-          <p><span class="by">By: {{playlist.snippet.channelTitle}}</span>
-              <mydate class="mydate">{{playlist.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate></p>
+          <p class="pull-left"><span class="by">By: {{playlist.snippet.channelTitle}}</span>
+              <br><mydate class="mydate">{{playlist.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate></p>
+              <i class="icon ion-chevron-right"></i>
         </a>
-        </div>
+
       </div>
 
   </ion-content>

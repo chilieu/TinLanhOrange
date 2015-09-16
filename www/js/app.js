@@ -91,6 +91,16 @@ app.run(function($ionicPlatform) {
         controller: 'VideoChannelCtrl'
       }
     }
+  })
+
+  .state('app.debug', {
+    url: '/debug',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/debug.html',
+        controller: 'debugCtrl'
+      }
+    }
   });
 
 

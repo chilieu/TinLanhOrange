@@ -64,16 +64,28 @@ controler.controller('VideoCtrl', function($scope, $stateParams, Request) {
   $scope.videoId   = $stateParams.videoId;
   Request.post("", {action: 'video', videoId: $stateParams.videoId}).then(function (response) {
     $scope.videos = angular.fromJson(response);
+    console.log($scope.videos);
   });
 
 });
 
 controler.controller('VideoChannelCtrl', function($scope, $stateParams, Request, GENERAL_CONFIG) {
 
+  $scope.mainVideoId   = "QMOiCgIy1tg";
   Request.post("", {action: 'videos', channelId: GENERAL_CONFIG.CHANNELID}).then(function (response) {
     $scope.videos = angular.fromJson(response);
   });
 
 });
 
+
+controler.controller('debugCtrl', function($scope, $stateParams, Request, GENERAL_CONFIG) {
+
+  $scope.configurations = GENERAL_CONFIG;
+  Request.post("", {action: 'videos', channelId: GENERAL_CONFIG.CHANNELID}).then(function (response) {
+    $scope.pure_respone = response;
+    $scope.videos = angular.fromJson(response);
+  });
+
+});
 

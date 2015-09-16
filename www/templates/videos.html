@@ -1,15 +1,38 @@
 <ion-view view-title="Tin Lành Orange Channel">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
+
   <ion-content>
 
-      <div class="row" ng-repeat="video in videos">
-        <div class="col-sm-12 col-md-12">
-        <a class="item" href="#/app/video/{{video.id.videoId}}">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+      </label>
+    </div>
+
+    <div class="list card">
+      <div class="item item-body">
+          <div class="embed-responsive embed-responsive-16by9 video-wrapper">
+            <youtube-video class="embed-responsive-item" video-id="mainVideoId"></youtube-video>
+          </div>
+      </div>
+    </div>
+
+      <div class="row-fluid" ng-repeat="video in videos">
+        <a class="item item-icon-left item-icon-right" href="#/app/video/{{video.id.videoId}}">
           <img ng-if="video.snippet.thumbnails.default.url" class="img-responsive pull-left" ng-src="{{video.snippet.thumbnails.default.url}}">
-          <h2>{{ video.snippet.title | limitTo: 75 }}{{video.snippet.title.length > 75 ? '...' : ''}}</h2>
-          <p><span class="by">By: Tin Lành Orange</span>
-              <mydate class="mydate">{{video.snippet.publishedAt | date:'yyyy-MM-dd'}}</mydate></p>
+          <h2>{{video.snippet.title | limitTo: 75}}{{video.snippet.title.length > 75 ? '...' : ''}}</h2>
+          <p class="pull-left"><span class="by">By: Tin Lành Orange</span>
+            <br><mydate class="mydate">{{video.snippet.publishedAt | date:'MMM d, y h:mm:ss a'}}</mydate></p>
         </a>
-        </div>
       </div>
 
   </ion-content>
