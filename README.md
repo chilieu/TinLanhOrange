@@ -44,6 +44,7 @@ cordova platform add android
 
 cordova plugin rm org.apache.cordova.console
 
+sudo apt-get install default-jdk
 
 cordova build --release android
 
