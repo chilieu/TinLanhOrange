@@ -24,6 +24,10 @@ Once you have the code, CD into the folder and type:
 
 ionic state restore
 
+#for run on real device with http request
+install this plugin
+cordova plugin add cordova-plugin-whitelist
+
 This will install all plugins and platforms (this is only needed if you want to actually compile the app and install it on your device)
 
 Then run:
