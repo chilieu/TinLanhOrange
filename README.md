@@ -10,6 +10,8 @@ sudo apt-get install default-jdk
 
 download android sdk
 
+tools/android update sdk --no-ui
+
 Install node:
 
 https://nodejs.org/dist/v0.12.7/node-v0.12.7.pkg
