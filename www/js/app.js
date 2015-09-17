@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('TinLanhOrange', ['ionic', 'TinLanhOrange.controllers','youtube-embed'])
+var app = angular.module('TinLanhOrange', ['ionic', 'TinLanhOrange.controllers','youtube-embed', 'RequestService'])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,6 +20,37 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+})
+
+.filter('searchFor', function(Request, GENERAL_CONFIG){
+
+  // All filters must return a function. The first parameter
+  // is the data that is to be filtered, and the second is an
+  // argument that may be passed with a colon (searchFor:searchString)
+
+  return function(arr, searchString){
+
+    if(!searchString){
+      return arr;
+    }
+
+    var result = [];
+
+    searchString = searchString.toLowerCase();
+
+
+    // Using the forEach helper method to loop through the array
+    angular.forEach(arr, function(item){
+
+      if(item.snippet.title.toLowerCase().indexOf(searchString) !== -1){
+        result.push(item);
+      }
+
+    });
+
+    return result;
+  };
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

@@ -76,6 +76,14 @@ controler.controller('VideoChannelCtrl', function($scope, $stateParams, Request,
     $scope.videos = angular.fromJson(response);
   });
 
+  $scope.search = function() {
+    if ($scope.q) {
+      Request.post("", {action: 'search', q: $scope.q, channelId: GENERAL_CONFIG.CHANNELID}).then(function (response) {
+        $scope.videos = angular.fromJson(response);
+      });
+    }
+  };
+
 });
 
 

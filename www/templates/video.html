@@ -1,9 +1,5 @@
 <ion-view view-title="{{videos[0].snippet.channelTitle}}">
 
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-back-button></ion-nav-back-button>
-  </ion-nav-bar>
-
   <ion-content>
 
 <div class="list card">
@@ -23,7 +19,7 @@
       <a href="#" class="subdued">{{videos[0].statistics.likeCount}} Like</a>
       <a href="#" class="subdued">{{videos[0].statistics.viewCount}} Views</a>
     </p>
-    <p style="white-space: pre;" ng-bind-html="videos[0].snippet.description"></p>
+    <p style="white-space: pre;margin-top: 16px;margin-bottom: 16px;line-height: 1.7em;font-size: 1.4em;" ng-bind-html="videos[0].snippet.description"></p>
   </div>
 
   <div class="item tabs tabs-secondary tabs-icon-left">
