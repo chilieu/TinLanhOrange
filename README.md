@@ -10,6 +10,14 @@ sudo apt-get install default-jdk
 
 download android sdk
 
+tools/android update sdk --no-ui
+
+export JAVA_HOME="/usr/bin/java"
+export ANDROID_HOME="/home/vagrant/android-sdk-linux/"
+export ANDROID_TOOLS="/home/vagrant/android-sdk-linux/tools"
+export ANDROID_PLATFORM_TOOLS="/home/vagrant/android-sdk-linux/platform-tools"
+PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
+
 Install node:
 
 https://nodejs.org/dist/v0.12.7/node-v0.12.7.pkg
@@ -44,6 +52,7 @@ cordova platform add android
 
 cordova plugin rm org.apache.cordova.console
 
+sudo apt-get install default-jdk
 
 cordova build --release android
 
@@ -52,6 +61,7 @@ cordova compile android
 
 
 export ANDROID_HOME=~/home/vagrant/android-sdk-linux/
+
 export PATH=$PATH:/home/vagrant/android-sdk-linux/tools/
 
 
