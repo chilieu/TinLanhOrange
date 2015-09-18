@@ -73,6 +73,14 @@ sudo dpkg --add-architecture i386
 sudo apt-get -qqy update
 sudo apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 
+# Publishing your app
+
+/usr/lib/jvm/java-7-openjdk-amd64/bin/keytool -genkey -v -keystore TinLanhOrange.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+/usr/lib/jvm/java-7-openjdk-amd64/bin/jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore TinLanhOrange.keystore /home/vagrant/apps/TinLanhOrange/platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name
+
+/home/vagrant/android-sdk-linux/build-tools/23.0.1/zipalign -v 4 /home/vagrant/apps/TinLanhOrange/platforms/android/build/outputs/apk/android-release-unsigned.apk TinLanhOrange.apk
+
 
 # Code Layout
 The file structure is as follows:
