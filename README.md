@@ -75,10 +75,12 @@ sudo apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 
 # Build with IOS
 
-<key>NSAppTransportSecurity</key>  
-     <dict>  
-          <key>NSAllowsArbitraryLoads</key><true/>  
-     </dict>  
+< key >NSAppTransportSecurity</ key>
+< dict>
+  <!--Include to allow all connections (DANGER)-->
+  <key>NSAllowsArbitraryLoads</key>
+      <true/>
+</ dict>
 
 # Publishing your app
 
