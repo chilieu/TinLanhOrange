@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.tinlanhorange321126" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Tin Lành Orange</name>
+<widget id="me.chilieu.tinlanhorange" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Tin Lanh Orange</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Tin Lanh Youtube Channel
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="contact@chilieu.me" href="http://www.chilieu.me/">
+      Chi T Lieu
     </author>
   <content src="index.html"/>
   <access origin="*"/>
