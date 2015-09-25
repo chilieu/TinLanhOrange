@@ -73,6 +73,13 @@ sudo dpkg --add-architecture i386
 sudo apt-get -qqy update
 sudo apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 
+# Build with IOS
+
+<key>NSAppTransportSecurity</key>  
+     <dict>  
+          <key>NSAllowsArbitraryLoads</key><true/>  
+     </dict>  
+
 # Publishing your app
 
 /usr/lib/jvm/java-7-openjdk-amd64/bin/keytool -genkey -v -keystore TinLanhOrange.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
