@@ -6,7 +6,7 @@ var config_data = {
 		'APP_NAME': 'Tin Lanh Orange - Youtube Channel',
 		'APP_VERSION': '1.0',
 		'FIRST_URL': 'http://www.tinlanhorange.com',
-		'API_URL': 'http://www.web-s7.com/test.php',
+		'API_URL': 'http://tinlanhorange.com/app/api.php',
 		'CHANNELID': 'UCd8tHv1A1VsTL7WS9yQ3eGg'
 	}
 }
