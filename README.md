@@ -1,6 +1,9 @@
 # TinLanhOrange
 This is Tin Lanh Orange Video App - TinLanh Orange Channel on Youtube
 
+Enter Passphrase for keystore: Hoangyen7
+Enter key password for alias_name: hoangyen
+
 # Setup For MacOS and Linxux
 Install Java and SDK:
 
