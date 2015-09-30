@@ -1,6 +1,10 @@
 # TinLanhOrange
 This is Tin Lanh Orange Video App - TinLanh Orange Channel on Youtube
 
+Passphrase for keystore: H-o-a-n-g-y-e-n-7
+
+password for alias_name: h-o-a-n-g-y-e-n
+
 # Setup For MacOS and Linxux
 Install Java and SDK:
 
